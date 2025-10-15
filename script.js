@@ -1,4 +1,4 @@
-const API_KEY = ''; 
+const API_KEY = 'd80899bfa8eecf987dd399fb1d7e1281'; 
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 const cityInput = document.getElementById('cityInput');
@@ -83,3 +83,34 @@ function renderRecentCities() {
         recentCitiesDiv.appendChild(btn);
     });
 }
+
+async function searchCity(city) {
+    if (!city.trim()) {
+        showError('Please enter a city name');
+        return;
+    }
+
+    try {
+        const data = await fetchWeather(city);
+        displayWeather(data);
+        updateRecentCities(city);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+searchBtn.addEventListener('click', () => {
+    const city = cityInput.value.trim();
+    searchCity(city);
+});
+
+cityInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const city = cityInput.value.trim();
+        searchCity(city);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderRecentCities();
+});
