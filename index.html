@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Tracker App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Weather Tracker App</h1>
+        
+        <div class="search-section">
+            <input type="text" id="cityInput" placeholder="Enter city name..." />
+            <button id="searchBtn">Search</button>
+        </div>
+        
+        <div id="recentCities" class="recent-cities">
+            <h3>Recent Searches</h3>
+            <div id="recentButtons"></div>
+        </div>
+        
+        <div id="errorMsg" class="error hidden"></div>
+        
+        <div id="weatherDisplay" class="weather-display hidden">
+            <img id="weatherIcon" alt="Weather icon" />
+            <h2 id="cityName"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <div class="details">
+                <p id="humidity"></p>
+                <p id="windSpeed"></p>
+            </div>
+        </div>
+    </div>
     
+    <script src="script.js"></script>
 </body>
 </html>
