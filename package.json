@@ -1,0 +1,15 @@
+{
+  "name": "weather-tracker-app",
+  "version": "1.0.0",
+  "description": "A simple Weather Tracker App that fetches weather data using OpenWeatherMap API and displays it in a clean dashboard.",
+  "main": "script.js",
+  "scripts": {
+    "start": "serve ."
+  },
+  "keywords": ["weather", "javascript", "portfolio", "dashboard"],
+  "author": "sJoven",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
