@@ -13,6 +13,6 @@ jobs:
       - name: Send trigger to test repo
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.PAT_DISPATCH }}
           repository: sJoven/weather-tracker-test-playwright
           event-type: run-playwright-tests
