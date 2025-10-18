@@ -1,95 +1,118 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a346b 0%, #2a6698 100%);
+    color: #ffffff;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .search-section {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 #cityInput {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+#cityInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#cityInput:focus {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 #searchBtn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 0 25px 25px 0;
+    background: #4a90e2;
+    color: #ffffff;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #searchBtn:hover {
-    background-color: #0056b3;
+    background: #357abd;
+    transform: translateY(-2px);
 }
 
 .recent-cities {
-    margin-bottom: 20px;
-    text-align: left;
+    margin-bottom: 30px;
 }
 
 .recent-cities h3 {
-    margin: 0 0 10px 0;
-    color: #333;
-    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
 #recentButtons {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .recent-btn {
-    padding: 8px 12px;
-    background-color: #e9ecef;
-    color: #333;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 0.9rem;
     cursor: pointer;
-    text-align: left;
-    font-size: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .recent-btn:hover {
-    background-color: #dee2e6;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .error {
-    color: #dc3545;
-    background-color: #f8d7da;
-    padding: 10px;
-    border-radius: 5px;
+    text-align: center;
+    color: #ff6b6b;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .hidden {
@@ -98,30 +121,33 @@ h1 {
 
 .weather-display {
     text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #weatherIcon {
     width: 100px;
     height: 100px;
+    margin-bottom: 15px;
 }
 
 #cityName {
-    font-size: 24px;
-    color: #333;
-    margin: 10px 0;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 #temperature {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: bold;
-    color: #007bff;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 #description {
-    font-size: 18px;
-    color: #666;
-    margin: 10px 0;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
     text-transform: capitalize;
 }
 
@@ -129,28 +155,39 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    font-size: 16px;
 }
 
 .details p {
-    margin: 0;
-    color: #555;
+    font-size: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .container {
         padding: 20px;
-        margin: 10px;
     }
-    
+
+    h1 {
+        font-size: 2rem;
+    }
+
     .search-section {
         flex-direction: column;
     }
-    
-    #temperature {
-        font-size: 36px;
+
+    #cityInput {
+        border-radius: 25px;
+        margin-bottom: 10px;
     }
-    
+
+    #searchBtn {
+        border-radius: 25px;
+    }
+
+    #recentButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .details {
         flex-direction: column;
         gap: 10px;
