@@ -40,7 +40,7 @@ async function fetchWeather(city) {
 
 function displayWeather(data) {
     const { name, main, weather, wind } = data;
-    const iconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+    const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
 
     cityName.textContent = name;
     temperature.textContent = `${Math.round(main.temp)}°C`;
